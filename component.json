@@ -1,0 +1,10 @@
+{
+    "name": "blocks",
+    "description": "blocks component",
+    "scripts": ["index.js"],
+    "styles": ["styles.css"],
+    "main": "index.js",
+    "dependencies": {
+        "serandomps/dust": "master"
+    }
+}
