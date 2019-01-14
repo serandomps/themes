@@ -1,0 +1,12 @@
+<div class="themes-blocks source {name} form-group mb-3" data-name="{name}">
+    {?label}<label for="select-{name}-{id}">{label}</label>{/label}
+    <select id="select-{name}-{id}" class="form-control" data-value="{name}" data-style="border" data-searchbox-classes="border">
+        {?default}
+        <option value="">{default}</option>
+        {/default}
+        {#options}
+        <option value="{value}">{label}</option>
+        {/options}
+    </select>
+    <div class="invalid-feedback"></div>
+</div>

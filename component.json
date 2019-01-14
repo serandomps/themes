@@ -1,10 +1,23 @@
 {
-    "name": "blocks",
-    "description": "blocks component",
+    "name": "themes",
+    "description": "themes component",
     "scripts": ["index.js"],
     "styles": ["styles.css"],
     "main": "index.js",
     "dependencies": {
         "serandomps/dust": "master"
-    }
+    },
+    "templates": [
+        "blocks/checkbox.html",
+        "blocks/checkboxes.html",
+        "blocks/email.html",
+        "blocks/password.html",
+        "blocks/radios.html",
+        "blocks/select.html",
+        "blocks/select-options.html",
+        "blocks/text.html",
+        "blocks/textarea.html",
+        "blocks/uploads.html",
+        "blocks/uploads-preview.html"
+    ]
 }

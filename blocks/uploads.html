@@ -1,0 +1,19 @@
+<div class="form-group source images">
+    <span class="btn btn-success fileinput-button upload-button">
+        <span class="btn-icon"><i class="fa fa-plus"></i> </span>
+        <span>{label}</span>
+        <input type="file" multiple="" name="content" class="fileupload">
+    </span>
+    <!--<div id="progress" class="progress">
+        <div class="progress-bar progress-bar-success"></div>
+    </div>-->
+    <div class="files row">
+        {#_.update}
+        {#_.images}
+        <div class="col-md-3 file">
+            {>"themes-blocks-uploads-preview"/}
+        </div>
+        {/_.images}
+        {/_.update}
+    </div>
+</div>
