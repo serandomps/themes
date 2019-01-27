@@ -1,7 +1,13 @@
 {
     "name": "themes",
     "description": "themes component",
-    "scripts": ["index.js"],
+    "scripts": [
+        "index.js",
+        "blocks/radios.js",
+        "blocks/select.js",
+        "blocks/text.js",
+        "blocks/uploads.js"
+    ],
     "styles": ["styles.css"],
     "main": "index.js",
     "dependencies": {
