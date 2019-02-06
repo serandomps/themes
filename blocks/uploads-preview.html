@@ -1,9 +1,10 @@
-<div class="thumbnail">
-    <button class="btn btn-default btn-xs pull-right remove-file existing"
-            type="button" data-id="{id}" data-index="{?index}{index}{:else}0{/index}">
-        <i class="fa fa-trash" aria-hidden="true"></i>
-    </button>
-    {?url}
-    <img src="{url}"/>
-    {/url}
+<div class="themes-blocks-upload col-sm-6 col-lg-{size}">
+    <div class="card mb-3">
+        <button class="btn btn-default btn-xs pull-right remove-file existing" type="button" data-id="{id}">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+        </button>
+        {?url}
+        <img src="{url}" class="card-img-top"/>
+        {/url}
+    </div>
 </div>
