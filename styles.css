@@ -5,3 +5,39 @@
 body {
     font-family: 'Oxygen', sans-serif;
 }
+
+.themes-blocks-steps .nav-pills {
+    position: relative;
+}
+
+.themes-blocks-steps .nav-pills .nav-link {
+    background: none;
+    color: #6c757d;
+}
+
+.themes-blocks-steps .nav-pills .nav-link.active {
+    color: #007bff;
+}
+
+.themes-blocks-steps .rounded-circle {
+    border: 2px solid;
+    width: 75px;
+    height: 75px;
+    margin: auto;
+    line-height: 5.2em;
+    z-index: 2;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.themes-blocks-steps .connecting-line {
+    height: 2px;
+    background: #6c757d;
+    position: absolute;
+    width: 60%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+}

@@ -1,4 +1,14 @@
 <div class="themes-blocks source {name} form-group" data-name="{name}">
-    {?label}<label for="text-{name}-{id}">{label}</label>{/label}
-    <input type="text" class="form-control" id="text-{name}-{id}" placeholder="{help}" value="{value}">
+    {?label}<label for="text-{name}-{id}"{?srOnly} class="sr-only"{/srOnly}>{label}</label>{/label}
+    <div class="input-group">
+        {?icon}
+        <div class="input-group-prepend">
+            <span class="input-group-text">
+                <i class="{icon}"></i>
+            </span>
+        </div>
+        {/icon}
+        <input type="text" class="form-control" id="text-{name}-{id}" placeholder="{help}" value="{value}"{?readOnly} readonly{/readOnly}>
+    </div>
+    <div class="invalid-feedback"></div>
 </div>

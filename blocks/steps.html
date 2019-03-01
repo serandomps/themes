@@ -1,0 +1,46 @@
+<div class="themes-blocks-steps">
+    <ul class="nav nav-pills nav-justified mb-3" role="tablist">
+        <li class="connecting-line d-none d-md-block d-lg-block"></li>
+        {#headers}
+        <li class="nav-item">
+            <a class="nav-link{?active} active{/active}"
+               data-name="{name}"
+               id="themes-blocks-steps-{id}-{tid}-tab"
+               href="#themes-blocks-steps-{id}-{tid}"
+               role="tab"
+               aria-controls="pills-home"
+               aria-selected="{?active}true{:else}false{/active}">
+                <div class="rounded-circle">
+                    <i class="fa fa-2x {icon}"></i>
+                </div>
+            </a>
+        </li>
+        {/headers}
+    </ul>
+    <div class="tab-content">
+        {#bodies}
+        <div class="tab-pane{?active} show active{/active}" id="themes-blocks-steps-{id}-{tid}" role="tabpanel"
+             data-name="{name}"
+             aria-labelledby="themes-blocks-steps-{id}-{tid}-tab">
+            <div class="card">
+                <div class="card-header">{title}</div>
+                <div class="card-body">
+                    <div class="step">{body|s}</div>
+                    <div class="themes-blocks-steps-actions form-group">
+                        {?first}{:else}
+                        <button type="button" class="previous btn btn-secondary mr-2" data-step="vehicle">
+                            <span class="btn-icon hidden"><i class="fas fa-spinner fa-spin"></i> </span>
+                            <span class="content">Previous</span>
+                        </button>
+                        {/first}
+                        <button type="button" class="next btn btn-success" data-step="vehicle">
+                            <span class="btn-icon hidden"><i class="fas fa-spinner fa-spin"></i> </span>
+                            <span class="content">{?last}Done{:else}Next{/last}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {/bodies}
+    </div>
+</div>

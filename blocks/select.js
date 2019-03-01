@@ -1,9 +1,5 @@
 var dust = require('dust')();
 
-exports.format = function (data) {
-    return data;
-};
-
 exports.create = function (elem, o, done) {
     var picker = $('select', elem).selectpicker();
     if (o.value) {

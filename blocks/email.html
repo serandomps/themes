@@ -1,6 +1,15 @@
 <div class="themes-blocks source mb-3" data-name="{name}">
     <label for="{name}-{id}">{label}</label>
-    <input type="email" class="form-control" id="{name}-{id}" placeholder="{label}"
-           value="{value}"{?readonly} readonly{/readonly}>
+    <div class="input-group">
+        {?icon}
+        <div class="input-group-prepend">
+            <span class="input-group-text">
+                <i class="{icon}"></i>
+            </span>
+        </div>
+        {/icon}
+        <input type="email" class="form-control" id="{name}-{id}" placeholder="{label}" value="{value}" {?readonly}
+               readonly{/readonly}>
+    </div>
     <div class="invalid-feedback"></div>
 </div>
