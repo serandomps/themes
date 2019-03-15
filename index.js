@@ -100,6 +100,7 @@ dust.helpers.steps = function (chunk, context, bodies, params) {
     });
 };
 
+dust.loadSource(dust.compile(require('./blocks/button.html'), 'themes-blocks-button'));
 dust.loadSource(dust.compile(require('./blocks/checkbox.html'), 'themes-blocks-checkbox'));
 dust.loadSource(dust.compile(require('./blocks/checkboxes.html'), 'themes-blocks-checkboxes'));
 dust.loadSource(dust.compile(require('./blocks/email.html'), 'themes-blocks-email'));

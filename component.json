@@ -16,6 +16,7 @@
         "serandomps/utils": "master"
     },
     "templates": [
+        "blocks/button.html",
         "blocks/checkbox.html",
         "blocks/checkboxes.html",
         "blocks/email.html",
