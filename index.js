@@ -5,6 +5,7 @@ var handlers = {
     select: require('./blocks/select'),
     steps: require('./blocks/steps'),
     text: require('./blocks/text'),
+    textarea: require('./blocks/textarea'),
     uploads: require('./blocks/uploads')
 };
 
