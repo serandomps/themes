@@ -2,8 +2,8 @@
     {?label}<label>{label}</label>{/label}
     {#options}
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" data-name="{name}" value="{value}" id="checkboxes-{name}-{value}-{id}">
-        <label class="form-check-label" for="checkboxes-{name}-{value}-{id}">{label}</label>
+        <input class="form-check-input" type="checkbox" data-name="{name}" value="{value}" id="checkboxes-{name}-{value}-{_.container}">
+        <label class="form-check-label" for="checkboxes-{name}-{value}-{_.container}">{label}</label>
     </div>
     {/options}
 </div>

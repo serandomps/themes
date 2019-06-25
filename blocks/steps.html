@@ -5,8 +5,8 @@
         <li class="nav-item">
             <a class="nav-link{?active} active{/active}"
                data-name="{name}"
-               id="themes-blocks-steps-{id}-{tid}-tab"
-               href="#themes-blocks-steps-{id}-{tid}"
+               id="themes-blocks-steps-{_.container}-{tid}-tab"
+               href="#themes-blocks-steps-{_.container}-{tid}"
                role="tab"
                aria-controls="pills-home"
                aria-selected="{?active}true{:else}false{/active}">
@@ -19,9 +19,9 @@
     </ul>
     <div class="tab-content">
         {#bodies}
-        <div class="tab-pane{?active} show active{/active}" id="themes-blocks-steps-{id}-{tid}" role="tabpanel"
+        <div class="tab-pane{?active} show active{/active}" id="themes-blocks-steps-{_.container}-{tid}" role="tabpanel"
              data-name="{name}"
-             aria-labelledby="themes-blocks-steps-{id}-{tid}-tab">
+             aria-labelledby="themes-blocks-steps-{_.container}-{tid}-tab">
             <div class="card">
                 <div class="card-header">{title}</div>
                 <div class="card-body">

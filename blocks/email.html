@@ -1,5 +1,5 @@
 <div class="themes-blocks source mb-3" data-name="{name}">
-    <label for="{name}-{id}">{label}</label>
+    <label for="{name}-{_.container}">{label}</label>
     <div class="input-group">
         {?icon}
         <div class="input-group-prepend">
@@ -8,7 +8,7 @@
             </span>
         </div>
         {/icon}
-        <input type="email" class="form-control" id="{name}-{id}" placeholder="{label}" value="{value}" {?readonly}
+        <input type="email" class="form-control" id="{name}-{_.container}" placeholder="{label}" value="{value}" {?readonly}
                readonly{/readonly}>
     </div>
     <div class="invalid-feedback"></div>
