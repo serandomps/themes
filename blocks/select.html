@@ -1,6 +1,12 @@
 <div class="themes-blocks source {name} form-group mb-3" data-name="{name}">
     {?label}<label for="select-{name}-{_.container}">{label}</label>{/label}
-    <select id="select-{name}-{_.container}" class="form-control" data-value="{name}" data-style="border" data-searchbox-classes="border">
+    <select id="select-{name}-{_.container}"
+            class="form-control"
+            {?title} title="{title}"{/title}
+            data-value="{name}"
+            data-style="border"
+            data-searchbox-classes="border"
+            {?search} data-live-search="true"{/search}>
         {?default}
         <option value="">{default}</option>
         {/default}

@@ -17,7 +17,8 @@ exports.find = function (ctx, done) {
 
 exports.update = function (ctx, o, done) {
     if (!o.options) {
-        return ctx.picker.selectpicker('val', o.value);
+        ctx.picker.selectpicker('val', o.value);
+        return done();
     }
     dust.render('themes-blocks-select-options', o.options, function (err, out) {
         if (err) {
