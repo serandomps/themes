@@ -5,7 +5,11 @@ exports.create = function (elem, o, done) {
     if (o.value) {
         picker.selectpicker('val', o.value);
     }
-    picker.on('change', o.change);
+    picker.on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+        setTimeout(function () {
+            o.change(e, clickedIndex, isSelected, previousValue);
+        });
+    });
     done(null, {
         picker: picker
     });
