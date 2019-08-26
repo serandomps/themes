@@ -6,8 +6,9 @@ exports.create = function (elem, o, done) {
         picker.selectpicker('val', o.value);
     }
     picker.on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+        var thiz = this;
         setTimeout(function () {
-            o.change(e, clickedIndex, isSelected, previousValue);
+            o.change.call(thiz, e, clickedIndex, isSelected, previousValue);
         });
     });
     done(null, {
