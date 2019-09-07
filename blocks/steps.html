@@ -27,15 +27,19 @@
                 <div class="card-body">
                     <div class="step">{body|s}</div>
                     <div class="themes-blocks-steps-actions form-group">
-                        {?first}{:else}
+                        {?first}
+                        <a href="{back}" class="back btn btn-secondary mr-2">
+                            <span class="content"><i class="fas fa-arrow-left"></i> Back</span>
+                        </a>
+                        {:else}
                         <button type="button" class="previous btn btn-secondary mr-2" data-step="vehicle">
                             <span class="btn-icon hidden"><i class="fas fa-spinner fa-spin"></i> </span>
-                            <span class="content">Previous</span>
+                            <span class="content"><i class="fas fa-arrow-left"></i> Previous</span>
                         </button>
                         {/first}
-                        <button type="button" class="next btn btn-success" data-step="vehicle">
+                        <button type="button" class="next btn btn-primary" data-step="vehicle">
                             <span class="btn-icon hidden"><i class="fas fa-spinner fa-spin"></i> </span>
-                            <span class="content">{?last}Done{:else}Next{/last}</span>
+                            <span class="content">{?last}<i class="fas fa-save"></i> Done{:else}<i class="fas fa-arrow-right"></i> Next{/last}</span>
                         </button>
                     </div>
                 </div>

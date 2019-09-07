@@ -75,14 +75,16 @@ dust.helpers.steps = function (chunk, context, bodies, params) {
                 name: step.params.name,
                 title: step.params.title,
                 body: step.body,
-                active: step.params.active
+                active: step.params.active,
+                back: step.params.back
             });
             headers.push({
                 tid: tid,
                 name: step.params.name,
                 title: step.params.title,
                 icon: step.params.icon,
-                active: step.params.active
+                active: step.params.active,
+                back: step.params.back
             });
             tid++;
         });
