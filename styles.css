@@ -41,3 +41,8 @@ body {
     top: 50%;
     z-index: 1;
 }
+
+.title-text {
+    color: #6c757d!important;
+    font-weight: 500;
+}
