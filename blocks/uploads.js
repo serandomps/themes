@@ -28,6 +28,7 @@ exports.create = function (elem, o, done) {
         previewMaxHeight: 162,
         previewCrop: true
     }).on('fileuploaddone', function (e, data) {
+        utils.loaded();
         var file = data.files[0];
         var err = file.error;
         if (err) {
@@ -53,7 +54,9 @@ exports.create = function (elem, o, done) {
         });
     }).on('fileuploadadd', function (e, data) {
         var file = data.files[0];
-        console.log('file upload was queued', data)
+        utils.loading();
+        console.log('file upload was queued', data);
+
     }).prop('disabled', !$.support.fileInput)
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
 
