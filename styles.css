@@ -1,3 +1,23 @@
+body h1 {
+    font-size: 2rem;
+}
+
+body h2 {
+    font-size: 1.75rem;
+}
+
+body h3 {
+    font-size: 1.5rem;
+}
+
+body h4 {
+    font-size: 1.25rem;
+}
+
+body h5 {
+    font-size: 1rem;
+}
+
 .hidden {
     display: none;
 }
