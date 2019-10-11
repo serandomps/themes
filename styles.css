@@ -66,3 +66,7 @@ body {
     color: #6c757d!important;
     font-weight: 500;
 }
+
+.themes-blocks-editor .editor {
+    min-height: 400px!important;
+}

@@ -3,6 +3,7 @@
     "description": "themes component",
     "scripts": [
         "index.js",
+        "blocks/editor.js",
         "blocks/radios.js",
         "blocks/select.js",
         "blocks/steps.js",
@@ -20,6 +21,7 @@
         "blocks/button.html",
         "blocks/checkbox.html",
         "blocks/checkboxes.html",
+        "blocks/editor.html",
         "blocks/email.html",
         "blocks/feedback.html",
         "blocks/password.html",

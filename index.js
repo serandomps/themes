@@ -1,6 +1,7 @@
 var dust = require('dust')();
 
 var handlers = {
+    editor: require('./blocks/editor'),
     radios: require('./blocks/radios'),
     select: require('./blocks/select'),
     steps: require('./blocks/steps'),
@@ -106,6 +107,7 @@ dust.helpers.steps = function (chunk, context, bodies, params) {
 dust.loadSource(dust.compile(require('./blocks/button.html'), 'themes-blocks-button'));
 dust.loadSource(dust.compile(require('./blocks/checkbox.html'), 'themes-blocks-checkbox'));
 dust.loadSource(dust.compile(require('./blocks/checkboxes.html'), 'themes-blocks-checkboxes'));
+dust.loadSource(dust.compile(require('./blocks/editor.html'), 'themes-blocks-editor'));
 dust.loadSource(dust.compile(require('./blocks/email.html'), 'themes-blocks-email'));
 dust.loadSource(dust.compile(require('./blocks/feedback.html'), 'themes-blocks-feedback'));
 dust.loadSource(dust.compile(require('./blocks/password.html'), 'themes-blocks-password'));
