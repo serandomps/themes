@@ -15,11 +15,13 @@ exports.create = function (elem, o, done) {
         toolbar: [
             ['style', ['style']],
             ['font', ['bold', 'underline', 'clear']],
+            ['fontsize', ['fontsize']],
+            ['height', ['height']],
             ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
+            ['para', ['ul', 'ol', 'listStyles', 'paragraph']],
             ['table', ['table']],
             ['insert', ['link', 'picture', 'video']],
-            ['view', ['fullscreen', 'codeview', 'help']],
+            ['view', ['fullscreen', 'codeview', 'help']]
         ]
     });
     done(null, ctx);
