@@ -5,13 +5,16 @@ exports.create = function (elem, o, done) {
     var el = $('textarea', ctx.picker);
     if (o.value) {
         el.val(o.value);
+    } else {
+        ctx.reset = true;
     }
     if (o.change) {
         ctx.picker.on('change', 'input', o.change);
     }
-    el.summernote({
+    ctx.summernote = el.summernote({
         tabsize: 2,
         height: 200,
+        placeholder: el.attr('placeholder'),
         toolbar: [
             ['style', ['style']],
             ['font', ['bold', 'underline', 'clear']],
@@ -29,4 +32,11 @@ exports.create = function (elem, o, done) {
 
 exports.find = function (ctx, done) {
     done(null, $('textarea', ctx.picker).summernote('code'));
+};
+
+exports.ready = function (ctx, done) {
+    if (ctx.reset) {
+        ctx.summernote.summernote('reset');
+    }
+    done();
 };

@@ -70,3 +70,10 @@ body {
 .themes-blocks-editor .editor {
     min-height: 400px!important;
 }
+
+.themes-blocks .bootstrap-select>.dropdown-toggle.bs-placeholder,
+.themes-blocks .bootstrap-select>.dropdown-toggle.bs-placeholder:active,
+.themes-blocks .bootstrap-select>.dropdown-toggle.bs-placeholder:focus,
+.themes-blocks .bootstrap-select>.dropdown-toggle.bs-placeholder:hover {
+    color: #6c757d;
+}
