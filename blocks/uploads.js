@@ -1,7 +1,7 @@
 var dust = require('dust')();
 var utils = require('utils');
 
-var BINARY_API = utils.resolve('accounts:///apis/v/binaries');
+var BINARY_API = utils.resolve('www:///apis/v/binaries');
 
 var resolution = '288x162';
 
