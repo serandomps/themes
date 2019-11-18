@@ -13,7 +13,7 @@ exports.create = function (elem, o, done) {
     }
     ctx.summernote = el.summernote({
         tabsize: 2,
-        height: 200,
+        height: 400,
         placeholder: el.attr('placeholder'),
         toolbar: [
             ['style', ['style']],
