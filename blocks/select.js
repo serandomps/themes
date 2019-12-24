@@ -14,7 +14,7 @@ exports.create = function (elem, o, done) {
         var thiz = this;
         setTimeout(function () {
             o.change.call(thiz, e, clickedIndex, isSelected, previousValue);
-        });
+        }, 0);
     });
     done(null, {
         picker: picker

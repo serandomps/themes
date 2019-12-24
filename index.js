@@ -110,6 +110,7 @@ dust.loadSource(dust.compile(require('./blocks/checkboxes.html'), 'themes-blocks
 dust.loadSource(dust.compile(require('./blocks/editor.html'), 'themes-blocks-editor'));
 dust.loadSource(dust.compile(require('./blocks/email.html'), 'themes-blocks-email'));
 dust.loadSource(dust.compile(require('./blocks/feedback.html'), 'themes-blocks-feedback'));
+dust.loadSource(dust.compile(require('./blocks/fixed.html'), 'themes-blocks-fixed'));
 dust.loadSource(dust.compile(require('./blocks/password.html'), 'themes-blocks-password'));
 dust.loadSource(dust.compile(require('./blocks/radios.html'), 'themes-blocks-radios'));
 dust.loadSource(dust.compile(require('./blocks/select.html'), 'themes-blocks-select'));

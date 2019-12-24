@@ -24,6 +24,7 @@
         "blocks/editor.html",
         "blocks/email.html",
         "blocks/feedback.html",
+        "blocks/fixed.html",
         "blocks/password.html",
         "blocks/radios.html",
         "blocks/select.html",
