@@ -1,6 +1,8 @@
 var dust = require('dust')();
 
 var handlers = {
+    captcha: require('./blocks/captcha'),
+    checkboxes: require('./blocks/checkboxes'),
     editor: require('./blocks/editor'),
     radios: require('./blocks/radios'),
     select: require('./blocks/select'),
@@ -105,6 +107,7 @@ dust.helpers.steps = function (chunk, context, bodies, params) {
 };
 
 dust.loadSource(dust.compile(require('./blocks/button.html'), 'themes-blocks-button'));
+dust.loadSource(dust.compile(require('./blocks/captcha.html'), 'themes-blocks-captcha'));
 dust.loadSource(dust.compile(require('./blocks/checkbox.html'), 'themes-blocks-checkbox'));
 dust.loadSource(dust.compile(require('./blocks/checkboxes.html'), 'themes-blocks-checkboxes'));
 dust.loadSource(dust.compile(require('./blocks/editor.html'), 'themes-blocks-editor'));
@@ -167,7 +170,7 @@ exports.blocks = function (block, action, elem, o, done) {
                 block: block,
                 ctx: ctx
             });
-            done();
+            done(null, ctx);
         });
     }
     done = done || o;

@@ -3,6 +3,8 @@
     "description": "themes component",
     "scripts": [
         "index.js",
+        "blocks/captcha.js",
+        "blocks/checkboxes.js",
         "blocks/editor.js",
         "blocks/radios.js",
         "blocks/select.js",
@@ -15,10 +17,12 @@
     "main": "index.js",
     "dependencies": {
         "serandomps/dust": "master",
-        "serandomps/utils": "master"
+        "serandomps/utils": "master",
+        "serandomps/captcha": "master"
     },
     "templates": [
         "blocks/button.html",
+        "blocks/captcha.html",
         "blocks/checkbox.html",
         "blocks/checkboxes.html",
         "blocks/editor.html",
