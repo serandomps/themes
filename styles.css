@@ -1,21 +1,25 @@
-body h1 {
-    font-size: 2rem;
+h1, .h1 {
+    font-size: 22px;
 }
 
-body h2 {
-    font-size: 1.75rem;
+h2, .h2 {
+    font-size: 20px;
 }
 
-body h3 {
-    font-size: 1.5rem;
+h3, .h3 {
+    font-size: 18px;
 }
 
-body h4 {
-    font-size: 1.25rem;
+h4, .h4 {
+    font-size: 16px;
 }
 
-body h5 {
-    font-size: 1rem;
+h5, .h5 {
+    font-size: 14px;
+}
+
+h6, .h6 {
+    font-size: 12px;
 }
 
 .hidden {
@@ -24,6 +28,69 @@ body h5 {
 
 body {
     font-family: 'Oxygen', sans-serif;
+    color: #333 !important;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+body, .btn, .dropdown-menu, .form-control {
+    font-size: 14px;
+}
+
+.card {
+    border: 1px solid #e7eaf3;
+    border-radius: 0.3125rem;
+}
+
+.thumbnail .card .card-body {
+    padding: 15px;
+}
+
+.thumbnail .badge {
+    font-size: 12px;
+}
+
+.text-primary {
+    color: #377dff !important;
+}
+
+.text-muted, .text-secondary {
+    color: rgba(0, 0, 0, 0.54) !important;
+}
+
+.text-dark {
+    color: #333 !important;
+}
+
+.navigation .navbar-brand {
+    font-weight: bold;
+}
+
+.navigation .navbar-brand a {
+    font-weight: bold;
+}
+
+.navigation.navbar {
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.navigation .navbar-brand a {
+    color: rgb(108, 117, 125);
+}
+
+.serand-hw-16 {
+    width: 16px;
+    height: 16px;
+}
+
+.serand-icon-text-16 img {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.serand-icon-text-16 span {
+    vertical-align: middle;
 }
 
 .themes-blocks-steps .nav-pills {
@@ -63,17 +130,17 @@ body {
 }
 
 .title-text {
-    color: #6c757d!important;
+    color: #6c757d !important;
     font-weight: 500;
 }
 
 .themes-blocks-editor .editor {
-    min-height: 400px!important;
+    min-height: 400px !important;
 }
 
-.themes-blocks .bootstrap-select>.dropdown-toggle.bs-placeholder,
-.themes-blocks .bootstrap-select>.dropdown-toggle.bs-placeholder:active,
-.themes-blocks .bootstrap-select>.dropdown-toggle.bs-placeholder:focus,
-.themes-blocks .bootstrap-select>.dropdown-toggle.bs-placeholder:hover {
+.themes-blocks .bootstrap-select > .dropdown-toggle.bs-placeholder,
+.themes-blocks .bootstrap-select > .dropdown-toggle.bs-placeholder:active,
+.themes-blocks .bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.themes-blocks .bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
     color: #6c757d;
 }
