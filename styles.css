@@ -147,3 +147,11 @@ body, .btn, .dropdown-menu, .form-control {
 .themes-blocks .bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
     color: #6c757d;
 }
+
+@media (min-width: 992px) {
+    .collapse.serand-lg-show {
+        display: block;
+        height: auto !important;
+        visibility: visible;
+    }
+}
