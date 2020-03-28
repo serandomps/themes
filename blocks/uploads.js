@@ -7,7 +7,9 @@ var resolution = '288x162';
 
 exports.create = function (elem, o, done) {
     var binaries = {};
+    var max = o.max || 1;
     var values = o.value || [];
+    var pending = 0;
     values.forEach(function (value) {
         binaries[value] = {};
     });
@@ -26,6 +28,10 @@ exports.create = function (elem, o, done) {
         disableImageResize: /Android(?!.*Chrome)|Opera/.test(window.navigator.userAgent),
         previewMaxWidth: 288,
         previewMaxHeight: 162,
+        maxNumberOfFiles: max,
+        getNumberOfFiles: function () {
+            return Object.keys(binaries).length;
+        },
         previewCrop: true
     }).on('fileuploaddone', function (e, data) {
         utils.loaded();
@@ -52,11 +58,21 @@ exports.create = function (elem, o, done) {
                 console.log('successfully uploaded', data.result);
             });
         });
-    }).on('fileuploadadd', function (e, data) {
-        var file = data.files[0];
-        utils.loading();
-        console.log('file upload was queued', data);
-
+    }).on('fileuploadadd', function (e, xhr) {
+        var total = Object.keys(binaries).length + pending;
+        if (total < max) {
+            pending++
+            return utils.loading();
+        }
+        utils.loaded();
+        xhr.abort();
+        $('.invalid-feedback', elem).html('Only ' + max + ' files can be uploaded');
+    }).on('fileuploadalways', function (e, data) {
+        pending = 0;
+        utils.loaded();
+    }).on('fileuploadchunkalways', function (e, data) {
+        pending = 0;
+        utils.loaded();
     }).prop('disabled', !$.support.fileInput)
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
 
