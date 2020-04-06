@@ -17,4 +17,7 @@
         <input type="text" class="form-control" id="text-{name}-{id}" placeholder="{help}" value="{value}"{?readOnly} readonly{/readOnly}>
     </div>
     <div class="invalid-feedback"></div>
+    {?details}
+    <div class="form-help text-muted">{details}</div>
+    {/details}
 </div>

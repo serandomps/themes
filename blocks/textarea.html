@@ -2,4 +2,7 @@
     {?label}<label for="textarea-{name}-{id}" class="title-text font-weight-bolder">{?icon}<i class="text-dark {icon} mr-2"></i> {/icon}{label}</label>{/label}
     <textarea class="form-control" id="textarea-{name}-{id}" rows="{rows}" placeholder="{help}">{value}</textarea>
     <div class="invalid-feedback"></div>
+    {?details}
+    <div class="form-help text-muted">{details}</div>
+    {/details}
 </div>

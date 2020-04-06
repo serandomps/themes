@@ -26,6 +26,10 @@ h6, .h6 {
     font-size: 90%;
 }
 
+.form-help {
+    font-size: 90%;
+}
+
 .hidden {
     display: none;
 }
