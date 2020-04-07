@@ -6,13 +6,8 @@ var BINARY_API = utils.resolve('www:///apis/v/binaries');
 var resolution = '288x162';
 
 exports.create = function (elem, o, done) {
-    var binaries = {};
     var max = o.max || 1;
-    var values = o.value || [];
     var pending = 0;
-    values.forEach(function (value) {
-        binaries[value] = {};
-    });
     var uploader = $('.themes-blocks-uploads-uploader', elem).fileupload({
         url: BINARY_API,
         type: 'POST',
@@ -24,15 +19,22 @@ exports.create = function (elem, o, done) {
             })
         }],
         acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
-        maxFileSize: 5000000, // 5 MB
+        maxFileSize: 10 * 1024 * 1024,
         disableImageResize: /Android(?!.*Chrome)|Opera/.test(window.navigator.userAgent),
         previewMaxWidth: 288,
         previewMaxHeight: 162,
         maxNumberOfFiles: max,
         getNumberOfFiles: function () {
-            return Object.keys(binaries).length;
+            return $('.themes-blocks-upload', elem).length;
         },
-        previewCrop: true
+        previewCrop: true,
+        messages: {
+            maxNumberOfFiles: 'Only ' + max + ' files can be uploaded.',
+            acceptFileTypes: 'Type of the selected file is not allowed.',
+            maxFileSize: 'Size of the selected file is larger than the max allowed.',
+            minFileSize: 'Size of the selected file is smaller than the min allowed.',
+            uploadedBytes: 'Size of the selected file is larger than the max allowed.'
+        }
     }).on('fileuploaddone', function (e, data) {
         utils.loaded();
         var file = data.files[0];
@@ -41,7 +43,6 @@ exports.create = function (elem, o, done) {
             return console.error(err);
         }
         var binary = data.result;
-        binaries[binary.id] = {};
         utils.cdn('images', '/images/' + resolution + '/' + binary.id, function (err, url) {
             if (err) {
                 return console.error(err);
@@ -59,37 +60,49 @@ exports.create = function (elem, o, done) {
             });
         });
     }).on('fileuploadadd', function (e, xhr) {
-        var total = Object.keys(binaries).length + pending;
+        var total = $('.themes-blocks-upload', elem).length + pending;
         if (total < max) {
             pending++
             return utils.loading();
         }
         utils.loaded();
         xhr.abort();
-        $('.invalid-feedback', elem).html('Only ' + max + ' files can be uploaded');
+        $('.invalid-feedback', elem).html('Only ' + max + ' files can be uploaded.');
     }).on('fileuploadalways', function (e, data) {
         pending = 0;
         utils.loaded();
     }).on('fileuploadchunkalways', function (e, data) {
         pending = 0;
         utils.loaded();
+    }).on('fileuploadprocessfail', function (e, data) {
+        pending = 0;
+        utils.loaded();
+        var file = data.files[data.index];
+        if (!file) {
+            return;
+        }
+        $('.invalid-feedback', elem).html(file.error);
     }).prop('disabled', !$.support.fileInput)
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
 
     $(elem).on('click', '.remove-file', function () {
-        var el = $(this);
-        var id = el.data('id');
-        delete binaries[id];
-        el.closest('.themes-blocks-upload').remove();
+        $(this).closest('.themes-blocks-upload').remove();
         return false;
     });
 
+    $('.themes-blocks-uploads', elem).sortable();
+    $('.themes-blocks-uploads', elem).disableSelection();
+
     done(null, {
-        binaries: binaries,
+        elem: elem,
         uploader: uploader
     });
 };
 
 exports.find = function (ctx, done) {
-    done(null, Object.keys(ctx.binaries));
+    var uploads = [];
+    $('.themes-blocks-upload', ctx.elem).each(function () {
+        uploads.push($(this).data('id'));
+    });
+    done(null, uploads);
 };

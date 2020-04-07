@@ -137,6 +137,13 @@ body, .btn, .dropdown-menu, .form-control {
     z-index: 1;
 }
 
+.themes-blocks-uploads .remove-file {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #d9534f;
+}
+
 .title-text {
     font-weight: 500;
 }
