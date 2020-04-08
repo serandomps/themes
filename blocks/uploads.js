@@ -18,11 +18,15 @@ exports.create = function (elem, o, done) {
                 type: 'image'
             })
         }],
+        maxFileSize: 5 * 1024 * 1024,
+        disableImageResize: /Android(?!.*Chrome)|Opera/.test(
+            window.navigator.userAgent
+        ),
         acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
-        maxFileSize: 10 * 1024 * 1024,
-        disableImageResize: /Android(?!.*Chrome)|Opera/.test(window.navigator.userAgent),
         previewMaxWidth: 288,
         previewMaxHeight: 162,
+        imageMaxWidth: 1600,
+        imageMaxHeight: 900,
         maxNumberOfFiles: max,
         getNumberOfFiles: function () {
             return $('.themes-blocks-upload', elem).length;
