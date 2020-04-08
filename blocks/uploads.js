@@ -49,7 +49,7 @@ exports.create = function (elem, o, done) {
             }
             dust.render('themes-blocks-uploads-preview', {
                 id: binary.id,
-                url: url,
+                x288: url,
                 size: 3
             }, function (err, out) {
                 if (err) {
