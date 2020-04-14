@@ -174,3 +174,9 @@ body, .btn, .dropdown-menu, .form-control {
 .accordion-collapsible .card-body {
     border-top: 1px solid rgba(0,0,0,.125);
 }
+
+.blueimp-gallery > .indicator > li {
+    width: 40px !important;
+    height: 40px !important;
+    background-size: contain !important;
+}
