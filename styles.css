@@ -1,3 +1,7 @@
+.h0 {
+    font-size: 28px;
+}
+
 h1, .h1 {
     font-size: 22px;
 }
@@ -84,6 +88,10 @@ body, .btn, .dropdown-menu, .form-control {
 
 .navigation .navbar-brand a {
     color: rgb(108, 117, 125);
+}
+
+.serand-details .actions .btn {
+    flex: none !important;
 }
 
 .serand-hw-16 {
@@ -179,4 +187,31 @@ body, .btn, .dropdown-menu, .form-control {
     width: 40px !important;
     height: 40px !important;
     background-size: contain !important;
+}
+
+.thumbnail .card-title {
+    margin-bottom: 0;
+}
+
+.thumbnail .location {
+    margin-bottom: 0.5rem;
+}
+
+.divider {
+    margin: 0.5rem 0;
+    border-top: #eff1f0 1px solid;
+}
+
+.thumbnail .card .card-body {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.thumbnail .card {
+    border: none;
+}
+
+iframe {
+    border: none;
+    margin: 0;
 }
