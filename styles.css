@@ -1,9 +1,9 @@
 .h0 {
-    font-size: 28px;
+    font-size: 32px;
 }
 
 h1, .h1 {
-    font-size: 22px;
+    font-size: 26px;
 }
 
 h2, .h2 {
@@ -40,7 +40,6 @@ h6, .h6 {
 
 body {
     font-family: 'Oxygen', sans-serif;
-    color: #333 !important;
     -webkit-font-smoothing: subpixel-antialiased;
     text-rendering: optimizeLegibility;
 }
@@ -156,6 +155,22 @@ body, .btn, .dropdown-menu, .form-control {
     font-weight: 500;
 }
 
+.text-info {
+    color: #00c9a7 !important;
+}
+
+.text-danger {
+    color: #de4437 !important;
+}
+
+.text-dark {
+    color: #1e2022 !important;
+}
+
+.text-warning {
+    color: #f5ca99 !important;
+}
+
 .themes-blocks-editor .editor {
     min-height: 400px !important;
 }
@@ -180,7 +195,7 @@ body, .btn, .dropdown-menu, .form-control {
 }
 
 .accordion-collapsible .card-body {
-    border-top: 1px solid rgba(0,0,0,.125);
+    border-top: 1px solid rgba(0, 0, 0, .125);
 }
 
 .blueimp-gallery.gallery-thumbnails > .indicator > li {
@@ -195,20 +210,39 @@ body, .btn, .dropdown-menu, .form-control {
 
 .thumbnail .location {
     margin-bottom: 0.5rem;
+    margin-top: 3px;
+}
+
+.thumbnail .card-title .text-dark {
+    color: #1e2022 !important;
+}
+
+body,
+.text-muted,
+.text-secondary,
+.navbar-light .navbar-nav .nav-link,
+.themes-blocks .bootstrap-select > .dropdown-toggle.bs-placeholder,
+.themes-blocks .bootstrap-select > .dropdown-toggle.bs-placeholder:active,
+.themes-blocks .bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.themes-blocks .bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
+    color: #677788 !important;
+}
+
+.thumbnail .card {
+    border: .0625rem solid #e7eaf3 !important;
+}
+
+.thumbnail .fas {
+    color: #71869d !important;
+}
+
+.thumbnail .text-muted {
+    color: #677788 !important;
 }
 
 .divider {
     margin: 0.5rem 0;
-    border-top: #eff1f0 1px solid;
-}
-
-.thumbnail .card .card-body {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.thumbnail .card {
-    border: none;
+    border-top: .0625rem solid #e7eaf3 !important;
 }
 
 iframe {
