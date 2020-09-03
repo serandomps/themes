@@ -1,9 +1,10 @@
 var dust = require('dust')();
+var utils = require('utils');
 
 exports.create = function (elem, o, done) {
     var picker = $('select', elem).selectpicker();
     if (o.value) {
-        picker.selectpicker('val', o.value);
+        picker.selectpicker('val', utils.sanitize(o.value));
     }
     if (!o.change) {
         return done(null, {
@@ -27,7 +28,7 @@ exports.find = function (ctx, done) {
 
 exports.update = function (ctx, o, done) {
     if (!o.options) {
-        ctx.picker.selectpicker('val', o.value);
+        ctx.picker.selectpicker('val', utils.sanitize(o.value));
         return done();
     }
     dust.render('themes-blocks-select-options', o.options, function (err, out) {
@@ -36,7 +37,7 @@ exports.update = function (ctx, o, done) {
         }
         ctx.picker.html(out).selectpicker('refresh');
         if (o.value) {
-            ctx.picker.selectpicker('val', o.value);
+            ctx.picker.selectpicker('val', utils.sanitize(o.value));
         }
         done();
     });

@@ -1,10 +1,12 @@
+var utils = require('utils');
+
 exports.create = function (elem, o, done) {
     var ctx = {
         picker: $(elem)
     };
     var el = $('textarea', ctx.picker);
     if (o.value) {
-        el.val(o.value);
+        el.val(utils.sanitize(o.value));
     } else {
         ctx.reset = true;
     }

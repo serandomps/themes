@@ -1,3 +1,5 @@
+var utils = require('utils');
+
 exports.create = function (elem, o, done) {
     var ctx = {
         picker: $(elem)
@@ -6,7 +8,7 @@ exports.create = function (elem, o, done) {
     if (o.value) {
         values = Array.isArray(o.value) ? o.value : [o.value];
         values.forEach(function (value) {
-            $('input[value="' + value + '"]', ctx.picker).prop('checked', true);
+            $('input[value="' + utils.sanitize(value) + '"]', ctx.picker).prop('checked', true);
         });
     }
     if (o.change) {
