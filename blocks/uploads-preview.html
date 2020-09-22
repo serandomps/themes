@@ -1,8 +1,13 @@
 <div class="themes-blocks-upload col-sm-6 col-lg-{size}" data-id="{id}">
     <div class="card mb-3">
-        <button class="btn btn-default btn-xs pull-right remove-file existing" type="button">
-            <i class="fa fa-trash" aria-hidden="true"></i>
-        </button>
+        <div class="upload-actions w-100 text-right">
+            <button class="btn btn-default btn-xs pull-right remove-file existing" type="button">
+                <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+            </button>
+            <div class="btn btn-default btn-xs move-file existing" type="button">
+                <i class="fa fa-arrows-alt text-light" aria-hidden="true"></i>
+            </div>
+        </div>
         {?x288}
         <img src="{x288}" class="card-img-top"/>
         {/x288}

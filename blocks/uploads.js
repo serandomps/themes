@@ -94,7 +94,10 @@ exports.create = function (elem, o, done) {
         return false;
     });
 
-    $('.themes-blocks-uploads', elem).sortable();
+    $('.themes-blocks-uploads', elem).sortable({
+        handle: '.move-file',
+        connectWith: '.themes-blocks-uploads',
+    });
     $('.themes-blocks-uploads', elem).disableSelection();
 
     done(null, {
